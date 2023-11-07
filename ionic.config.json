@@ -1,0 +1,7 @@
+{
+  "name": "CoquetelApi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

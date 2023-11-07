@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'coquetel-detalhes/:id',
+    loadChildren: () => import('./coquetel-detalhes/coquetel-detalhes.module').then( m => m.CoquetelDetalhesPageModule)
+  },
 ];
 
 @NgModule({

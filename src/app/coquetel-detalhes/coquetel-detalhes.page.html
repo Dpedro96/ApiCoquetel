@@ -8,16 +8,16 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngIf="info">
+  <div *ngIf="info">
     <img [src]="info.strDrinkThumb" />
     <h2>{{ info.strDrink }}</h2>
     <h3>Ingredientes:</h3>
-    <ion-list>
-      <ion-item *ngFor="let ingredient of getIngredients(info)">
+    <ul>
+      <li *ngFor="let ingredient of getIngredients(info)">
         {{ ingredient }}
-      </ion-item>
-    </ion-list>
+      </li>
+    </ul>
     <h3>Instruções:</h3>
     <p>{{ info.strInstructions }}</p>
-  </ion-card>
+  </div>
 </ion-content>

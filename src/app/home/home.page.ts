@@ -9,16 +9,19 @@ import { CocktailServiceService } from '../service/cocktail-service.service';
 })
 export class HomePage implements OnInit{
   randomDrinks: any[] = [];
-  result: any = null;
+  result: any[] = [];
   searchTerms: string = '';
-  constructor(private cqt : CocktailServiceService) {}
+  constructor(private cqt : CocktailServiceService) {
+
+  }
 
   ngOnInit(): void {
     this.getFiveRandomDrinks();
+    this.searchTerms = "";
   }
 
   getFiveRandomDrinks() {
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 6; i++) {
       this.cqt.getRandomDrinks().subscribe(
         (data: any) => {
           const drink = data.drinks ? data.drinks[0] : null;
@@ -33,14 +36,16 @@ export class HomePage implements OnInit{
   }
 }
 
-  search(){
-    this.randomDrinks = []
-    this.cqt.getAll(this.searchTerms).subscribe((data: any) => {
-      this.result = data.drinks ? data.drinks[0] : null;},
+search() {
+  this.cqt.getAll(this.searchTerms).subscribe(
+    (data: any) => {
+      this.result = data.drinks || [];
+    },
     (error) => {
-      console.error('Erro na requisição', error)
-    });
-  }
+      console.error('Erro na requisição', error);
+    }
+  );
+}
 
 
 }

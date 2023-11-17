@@ -1,19 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
+<ion-header >
+  <ion-toolbar class="header">
+    <ion-title >
+      <button class="btnTitulo" onClick="window.location.reload()">
       Coqueteis
+      </button>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
-  <ion-searchbar [(ngModel)]="searchTerms" (ionChange)="search()"></ion-searchbar>
-  <ion-item *ngIf="result" [routerLink] = "['/', 'coquetel-detalhes', result.idDrink]">
-    <ion-thumbnail slot="start">
-    <img [src]="result.strDrinkThumb" />
-  </ion-thumbnail>
-    <h2>{{ result.strDrink }}</h2>
-  </ion-item>
+  <ion-content >
+    <ion-searchbar [(ngModel)]="searchTerms" (ionChange)="search()"></ion-searchbar>
+    <ion-list *ngFor="let resultItem of result">
+      <ion-item *ngIf="resultItem" [routerLink]="['/', 'coquetel-detalhes', resultItem.idDrink]">
+        <ion-thumbnail slot="start">
+          <img [src]="resultItem.strDrinkThumb" />
+        </ion-thumbnail>
+        <h2>{{ resultItem.strDrink }}</h2>
+      </ion-item>
+    </ion-list>
   <ion-list>
     <ion-item *ngFor="let drink of randomDrinks">
       <ion-item *ngIf="drink" [routerLink] = "['/', 'coquetel-detalhes', drink.idDrink]">

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
  * {
   padding: 0;
   margin: 0px;
@@ -21,7 +21,7 @@ div{
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.05em;
-    color: #1f194c;
+    color: #18181b;
     position: relative;
   }
    h2:before {
@@ -37,7 +37,7 @@ div{
     font-size: 1.1em;
     font-weight: 600;
     margin-bottom: 0.2em;
-    color: #1f194c;
+    color: #18181b;
     text-transform: uppercase;
   }
  ul {
@@ -58,4 +58,14 @@ li {
     font-weight: 400;
     font-size: 13pt;
     font-family: 'Open Sans', sans-serif;
+  }
+
+  .header{
+    --background:#fed639;
+    font-size: 15pt;
+    color: #000000f3;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .backBtn{
+    color: #000000;
   }

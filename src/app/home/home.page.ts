@@ -37,6 +37,7 @@ export class HomePage implements OnInit{
 }
 
 search() {
+  this.randomDrinks = [];
   this.cqt.getAll(this.searchTerms).subscribe(
     (data: any) => {
       this.result = data.drinks || [];

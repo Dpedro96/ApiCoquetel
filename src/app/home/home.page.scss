@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 #container {
   text-align: center;
 
@@ -32,11 +33,15 @@ ion-thumbnail {
 }
 
 button{
-  font-size: 15pt;
+  font-size: 20pt;
   background-color: #fed639;
-  color: black;
-  
+  color: #000000d8;
+  font-family: 'Open Sans', sans-serif;
 }
 .header{
-  --background:#fed639;
+  --background:#fed639;  
+}
+
+.btnMais{
+  --background: #fed639;
 }
